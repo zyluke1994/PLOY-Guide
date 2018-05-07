@@ -1,0 +1,191 @@
+<FIELDSET>
+
+    <div class="container" ng-controller="dayDetailCtrl">
+
+
+        <div class="scrollable">
+            <div class="scrollable-header">
+
+                <!-- <div style="padding:8px; text-align:center; background-color:whitesmoke">
+                    <h4>Day {{daySelected}} - {{dateSelected | date:'EEEE yyyy-MM-dd'}}</h4>
+                </div> -->
+                <div class="locationBox">
+                    <div ng-show="showMap">
+                        <iframe width="100%" height="200" frameborder="0" style="border:0" ng-src="{{trustSrc(locationMapURL)}}" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div ng-show="showNearby">
+                        <iframe width="100%" height="200" frameborder="0" style="border:0" ng-src="{{trustSrc(nearbyMapURL)}}" allowfullscreen>
+                        </iframe>
+                    </div>
+
+                    <div id="locDisplayBox" ng-show="showLocation" style="height:200px; color:white; background-size: 600px; background-position-y:30%;
+        background-repeat: no-repeat;" ng-style="{'background-image': 'url(' +backgroundPicToDisplay + ')'}">
+                        <br>
+                        <h4 style="text-align:center" id="location">You are near/at:</h4>
+                        <h3 style="text-align:center; padding-top: 5px; padding-bottom:5px;background-color:rgba(114, 114, 114,0.4)">{{locationToDisplay}} </h3>
+                        <h4 style="text-align:center" id="location">{{locationToDisplay2}}</h4>
+                        <h5 style="text-align:center" id="location">{{distance/1000| number:1}} KM away from {{listForDaySelected[0].attractionName }}</h5>
+                    </div>
+
+                </div>
+                <div class="btn-group justified" style="background-color:rgba(242, 242, 242,0.7)">
+                    <a style="color:#605885" ng-click="switchMapView()" class="btn btn-navbar"><i style="color:#605885" class="fa fa-map-o fa-navbar"></i> Map</a>
+                    <a style="color:#605885" ng-click="switchNearbyView()" class="btn btn-navbar"><i style="color:#605885" class="fa fa-map-signs fa-navbar"></i> Nearby</a>
+                    <a style="color:#605885" ng-click="showInfo('toCheck')" class="btn btn-navbar"><i style="color:#605885" class="fa fa-info-circle fa-navbar"></i> Information</a>
+                </div>
+            </div>
+            <div class="scrollable-content" ng-show="showInfoPage" style="background-color:#605885; color:white; padding-bottom: 50px;">
+                <br>
+                <h5 style="text-align:right; margin-right:20px;">About {{attractionForInfo.attractionName}} <i style="color:white; margin-left:10px;" ng-click="closeShowInfo()"
+                        class="fa fa-times fa-navbar"></i></h5>
+
+
+                <hr>
+                <div style="margin:10px;">
+                    <p>
+                        {{attractionForInfo.attractionName}} | {{attractionForInfo.visitStart | date:'short'}} - {{attractionForInfo.visitEnd | date:'short'}}
+                    </p>
+                    <p>
+                       <label> Address: </label> {{attractionForInfo.address}}
+                    </p>
+                    <p>
+                        <label> GPS: </label>{{attractionForInfo.GPSCoordinates}}
+                    </p>
+                    <p>
+                        <label>Hours: </label>{{attractionForInfo.hours}}
+                    </p>
+                    <p>
+                        <label>Phone: <l/abel>{{attractionForInfo.phone}}
+                    </p>
+                    <p>
+                        <label> Website:</label> <a href="{{attractionForInfo.website}}"></a> {{attractionForInfo.website}}
+                    </p>
+                    <p>
+                        <label> Memo:</label> {{attractionForInfo.planEntrymemo}}
+                            
+                    </p>
+                    <p>
+                        <label> Details:</label> {{attractionForInfo.description}}
+                    </p>
+
+                    <img src="{{attractionForInfo.picture1URL}}" style="max-height:200px;" class="img-fluid" alt="Responsive image">
+                    <img src="{{attractionForInfo.picture2URL}}" style="max-height:200px;" class="img-fluid" alt="Responsive image">
+
+
+                    <!-- <div class="carousel ng-scope ng-isolate-scope">
+                        <div class="carousel-inner">
+                            <div class="carousel-item ng-isolate-scope ui-drag-move dismiss" ng-style="{'background-image': 'url(' + attractionForInfo.picture1URL + ')'}; z-index: 1999;">
+                                <div class="item">
+                                    <div ng-transclude="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+            <div class="scrollable-content" ng-show="showAttractionList" style="background-color:#605885; color:white;padding-bottom: 50px;">
+                <br>
+                <p style="text-align:center;">Day {{daySelected}} - {{dateSelected | date:'EEEE yyyy-MM-dd'}}</p>
+                <div class="list-group" ui-turn-off='uiSidebarLeft' ng-show="showPastStopsPage">
+                    <a ng-repeat="item in listForDaySelectedPast" ng-click="" style="margin:2px; height:65px; background-color:#605885; color:grey; border-bottom:0px;"
+                        id="tripAttractionListItem" ng-style="{'background-image': 'url(' + data[0].picture1URL + ')'}" class="list-group-item ng-binding ng-scope ">
+                                <span style="margin-right:20px;">{{item.visitStart | date:'hh:mm a'}} - {{item.visitEnd | date:'hh:mm a'}}
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span>{{item.attractionName}}               
+                    </span>
+
+<div class="row">
+    <div class="col-xs-4">
+                  <div style="text-align:right; color:#ff941e;"  ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+
+    </div>
+                                                    <div class="col-xs-4">
+                                                            <div style="text-align:right; color:#ff941e;"   ng-click = "editModal(item)"> <i class="fa fa-pencil " aria-hidden="true"></i> Edit </div>
+
+                                                    </div>
+
+</div>
+
+                    
+        
+      </a>
+                </div>
+                <h5 style="text-align:center;"> Upcoming Stops <i style="color:white" ng-click="showPastStops()" class="fa fa-history fa-navbar"></i> </h5>
+                <div class="list-group" ui-turn-off='uiSidebarLeft'>
+
+                    <a ng-repeat="item in listForDaySelected" ng-click="" style="margin:2px; height:65px; background-color:#605885; color:white; border-bottom:0px;"
+                        id="tripAttractionListItem" ng-style="{'background-image': 'url(' + data[0].picture1URL + ')'}" class="list-group-item ng-binding ng-scope ">
+                                <span style="margin-right:20px;">{{item.visitStart | date:'hh:mm a'}} - {{item.visitEnd | date:'hh:mm a'}}
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span>{{item.attractionName}}               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;"  ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;"   ng-click = "editModal(item)"> <i class="fa fa-pencil " aria-hidden="true"></i> Edit </div>
+                                                                                         
+                                        <div ui-content-for="modals">
+  <div class="modal" ui-if="editModal" ui-state='editModal'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="editModal">&times;</button>
+          <h4 class="modal-title">{{editModalAttraction}}</h4>
+        </div>
+        <div class="modal-body">
+                        <div class="row">
+                                   <label class="col-xs-6">Start: {{editModalVisitStart | date:'short' }}</label>
+<label class="col-xs-6">                     End: {{editModalVisitEnd | date:'short' }}</label>
+                        </div>
+                                                 
+            <div class="row">
+
+                              <div class="col-xs-5" style="margin-left:15px;" uib-timepicker ng-model="editModalVisitStart" ng-change="changedStart(editModalVisitStart)" hour-step="1" minute-step="1" show-meridian="true"></div>
+
+                              <div class="col-xs-5"  style="margin-left:20px;" uib-timepicker ng-model="editModalVisitEnd" ng-change="changedEnd()" hour-step="1" minute-step="1" show-meridian="true"></div>
+
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="editModal" class="btn btn-default">Close</button>
+          <button ui-turn-off="editModal" ng-click="saveChangesEdit(editModalVisitStart,editModalVisitEnd)" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+                                        
+                                        
+                                        </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;"  ng-click="updatePlan(item,'updateVisitEndActual',$index)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

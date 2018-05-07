@@ -1,0 +1,25 @@
+<FIELDSET>
+  <div class="container" ng-controller="myTripsCtrl">
+
+    <div class="scrollable">
+      <div style="padding:8px; text-align:center; background-color:whitesmoke">
+        <h4>My Trips</h4>
+      </div>
+
+      <div class="scrollable-content" style=" padding-bottom: 50px;">
+        <div class="list-group" ui-turn-off='uiSidebarLeft'>
+          <a ng-repeat="item in myTrips"  ng-click="loadPlan(item.planID)" style=" margin: 15px; height:125px; background-color:whitesmoke" id="myTripsListItem" class="list-group-item ng-binding ng-scope ">
+        
+        <div class="myTripsTitleBar" bottom>
+        <p>{{item.tripName}}         <i class="fa fa-chevron-right pull-right"></i>
+</p>
+
+
+        </div>
+        
+        
+      </a>
+        </div>
+      </div>
+    </div>
+  </div>

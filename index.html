@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ploydash">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>PloyDash</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="fonts/TravelIcon/flaticon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
+  <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">-->
+  <!--<link rel="stylesheet" href="bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker-1.1.4/src/css/datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-duration-picker/dist/bootstrap-duration-picker.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+        <link rel="stylesheet" href="bower_components/image-picker-master/image-picker/image-picker.css" />-->
+
+  <!-- Only required for desktop -->
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-hover.min.css" />
+
+  <!-- Always required -->
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
+
+  <!-- Only required for desktop -->
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.min.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,600,700" rel="stylesheet">
+
+  <!--<link href="bower_components/pure-angular-advanced-searchbox/dist/styles/main.css" rel="stylesheet">-->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  <style>
+  </style>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+  <!-- Sidebars -->
+
+  <div ng-if="!tripOnly" ng-controller="sideBarCtrl" class="sidebar sidebar-left">
+    <div class="scrollable">
+      <h1 class="scrollable-header app-name">
+        Hi {{userLogin.username}}</h1>
+      <div class="scrollable-content">
+        <div class="list-group" ui-turn-off='uiSidebarLeft'>
+          <a class="list-group-item" href="#/link1">My Trips
+            <i class="fa fa-chevron-right pull-right"></i>
+          </a>
+          <a class="list-group-item" href="/view/test.html">Test GPS
+            <i class="fa fa-chevron-right pull-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="!tripOnly" class="sidebar sidebar-right">
+    <!-- ... -->
+  </div>
+
+  <div class="app">
+    <div class="navbar navbar-app navbar-absolute-top">
+      <div ng-if="!tripOnly" class="navbar-brand navbar-brand-center" ui-yield-to="title">
+        <img style="height:20px; margin:auto;" src="../assets/ploy_white_orange.png">
+      </div>
+      <div ng-if="tripOnly"  class="navbar-brand navbar-brand-center navbar-brand-center-pc"  ui-yield-to="title">
+        <img style="height:20px; margin:auto;" src="../assets/ploy_white_orange.png">
+      </div>
+      <div ng-if="!tripOnly" class="btn-group pull-left">
+        <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+          <i class="fa fa-bars" style="font-size:1.5em"></i>
+        </div>
+      </div>
+      <div ng-if="!tripOnly" class="btn-group pull-right" ui-yield-to="navbarAction">
+        <div ui-toggle="uiSidebarRight" class="btn sidebar-right-toggle">
+          <i class="fa fa-compass" style="font-size:1.5em"></i>
+        </div>
+      </div>
+    </div>
+
+    <!--<div class="navbar navbar-app navbar-absolute-bottom">
+        <div class="btn-group justified">
+          <a href="/docs" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> Docs</a>
+          <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> Sources</a>
+          <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> Issues</a>
+        </div>
+      </div>-->
+    <!-- App body -->
+
+    <div class='app-body'>
+      <div class='app-content'>
+        <ng-view style="overflow-y: scroll;"></ng-view>
+      </div>
+    </div>
+  </div>
+  <!-- ~ .app -->
+
+  <!-- Modals and Overlays -->
+  <div ui-yield-to="modals"></div>
+
+</body>
+<!-- jQuery Version 1.11.1 -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-cookies.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-aria.min.js"></script>
+
+<!--<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>-->
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- Angular Material Javascript now available via Google CDN; version 0.9.4 used here -->
+<!--<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>-->
+<script src="js/jquery.js"></script>
+<script src="script.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.js"></script>
+
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/pure-angular-advanced-searchbox/dist/scripts/ui.core.js"></script>
+<script src="bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox-tpls.min.js"></script>
+<script src="bower_components/moment/moment.js"></script>
+<script src="bower_components/angular-bootstrap-datetimepicker-1.1.4/src/js/datetimepicker.js"></script>
+<script src="bower_components/angular-bootstrap-datetimepicker-1.1.4/src/js/datetimepicker.templates.js"></script>
+<script src="bower_components/dd-text-collapse/dd-text-collapse.js"></script>
+<script src="bower_components/ng-pageslide-master/dist/angular-pageslide-directive.min.js"></script>
+
+<script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+<script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
+<script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
+
+<script src="bower_components/angular-ui-grid/ui-grid.min.js"></script>
+<script src="https://unpkg.com/custom-input@0.2.0/dist/custom-input.js"></script>
+<script src="https://unpkg.com/angular-datetime-input@5.1.0/dist/datetime.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/image-picker-master/image-picker/image-picker.min.js"></script>
+<!--<script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>-->
+<script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+<script src="controller/inputAttractionCtrl.js"></script>
+<script src="controller/dayDetailCtrl.js"></script>
+<script src="controller/tripDetailCtrl.js"></script>
+<script src="controller/viewAttractionCtrl.js"></script>
+<script src="controller/loginCtrl.js"></script>
+<script src="controller/myTripsCtrl.js"></script>
+<script src="controller/modal/viewAttractionModalCtrl.js"></script>
+<script src="controller/modal/addToPlanModalCtrl.js"></script>
+<script src="controller/modal/editPlanModalCtrl.js"></script>
+<script src="controller/viewPlanCtrl.js"></script>
+<script src="controller/tripCtrl.js"></script>
+<script src="controller/tripViewCtrl.js"></script>
+<script src="controller/viewPlanCalendarCtrl.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwmonOnmnksHvgB4qMGsoB8f-R9w7GmzU&libraries=geometry&sensor=true&callback=initMap"
+  async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+
+
+<script src="https://jvandemo.github.io/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
+
+
+
+
+
+
+</html>

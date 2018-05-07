@@ -1,0 +1,761 @@
+<div class="container" ng-controller="tripCtrl">
+  <div ng-if="noTripFound" style="overflow-y: scroll; text-align:center">
+    <br>
+    <br>
+    <br>
+    <span class="flaticon-placeholder-4" style="color: rgb(253, 78, 78)"></span>
+    <h1 style="color: #ff941e">
+      <br> <strong>Whoops!</strong>
+      <br>
+      <br> Looks like we can't find the trip you are looking for.
+    </h1>
+    <h3 style="color: #ff941e"> Double check your code or enter a different code. 
+    </h3>
+    <br>
+    <h4> Contact us at <a href="mailto:contact@ploytrip.com">contact@ploytrip.com</a> for further assistance. 
+      </h4>
+  </div>
+  <div ng-if="!noTripFound" style="overflow-y: scroll;">
+    <br>
+    <br>
+
+    <div class="well tripDetailTitle" style="margin-bottom:0px; border:0px; background-repeat: no-repeat; background-image: url('../assets/titlebanner.jpg'); background-size: 1200px; background-position: 30%;"
+      ng-style="{'background-image': 'url('selectedDayItem.content[0].picture1URL')">
+      <!-- URL:{{selectedDayItem.content[0].picture1URL}} -->
+      <div class="row">
+        <div class="col-md-6" style="padding-top:80px">
+          <h2>{{tripOverview.tripName}}
+            <!-- <a style="font-size:14pt; color:lightgray" ng-click="openDestinationInfoModal('lg',tripOverview)"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></a> -->
+          </h2>
+
+
+        </div>
+        <div class="col-md-6" style="text-align:right;">
+          <p>{{tripOverview.tripStart | date: 'mediumDate'}} - {{tripOverview.tripEnd | date: 'mediumDate'}}
+          </p>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-9">
+
+          <h4>
+            <strong>{{tripOverview.tripOrigin}} , {{tripOverview.tripStops}} , {{tripOverview.tripFinalDestination}}
+            </strong>
+          </h4>
+        </div>
+        <div class="col-md-3" style="text-align:right">
+
+          <p>Prepared by: {{tripOverview.inputBy}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3" style="padding-left:0px; padding-right:0px; border-right:lightgray 1px solid">
+      <div class="list-group" style="overflow-y: scroll; border-style:none;">
+        <button ng-class="{'active': activeItemIndex == -1}" type="button" ng-click="showDestinationMsgBtn()" data-toggle="collapse"
+          data-target="#destinationInfoCollapse" class="list-group-item list-group-item-plan">
+          Trip Info & Documents</button>
+        <div ng-repeat="dayItem in processByDateList">
+          <button ng-class="{'active': processByDateList.indexOf(dayItem) == activeItemIndex}" ng-click="showSelectedDay(dayItem, processByDateList.indexOf(dayItem))"
+            type="button" class="list-group-item list-group-item-plan">
+            Day {{processByDateList.indexOf(dayItem)+1}}
+            <br> {{dayItem.dateList | limitTo : 15}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9" style="border-left:lightgray 1px solid; overflow-y: scroll;">
+      <!-- <button class="btn btn-default btn-block" ng-click="showDestinationMsgBtn()" style="font-size:12pt;" data-toggle="collapse"
+            data-target="#destinationInfoCollapse">
+            <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> {{showDestinationMsg}}</button>
+
+        <br> -->
+      <br>
+      <h4>{{dailyHeadingTitle}}</h4>
+      <!-- <div id="destinationInfoCollapse" class="collapse" style="padding:10px; border-style: solid; border-radius: 5px; border-width: 1px; border-color: lightgrey;"> -->
+
+      <div id="" ng-show="showDestinationInfo" style="padding:10px; overflow-y: scroll; border-style: solid; border-radius: 5px; border-width: 1px; border-color: lightgrey;">
+
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Destination(s) Briefing</h4>
+
+            <pre class="pre-tag-destination">{{ tripOverview.briefing || 'no description' }}</pre>
+          </div>
+
+
+
+
+        </div>
+
+        <h4>Flight(s) Information</h4>
+        <pre class="pre-tag-destination">{{ tripOverview.flights || 'no description' }}</pre>
+        <h4>Accomodation(s) Information</h4>
+        <pre class="pre-tag-destination">{{ tripOverview.accomodations || 'no description' }}</pre>
+
+        <h4>What To Pack?</h4>
+        <pre class="pre-tag-destination">{{ tripOverview.packing || 'no description' }}</pre>
+
+
+        <h4>All About This Trip</h4>
+        <pre class="pre-tag-destination">{{ tripOverview.aboutDestination || 'no description' }}</pre>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <h5>Weather</h5>
+            <pre class="pre-tag-destination">{{ tripOverview.weather || 'no description' }}</pre>
+          </li>
+          <!-- <li class="list-group-item">
+                        <h5>Dressing</h5>
+
+                        <a href="#" editable-textarea="tripOverview.dressing" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.dressing || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <li class="list-group-item">
+            <h5>Payments</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.payments || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Electronics</h5>
+
+
+            <pre class="pre-tag-destination">{{ tripOverview.electronics || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Medical</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.medical || 'no description' }}</pre>
+
+          </li>
+          <li class="list-group-item">
+            <h5>Time Zone</h5>
+
+
+            <pre class="pre-tag-destination">{{ tripOverview.timeZone || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Language</h5>
+
+
+            <pre class="pre-tag-destination">{{ tripOverview.language || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Transportation</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.transportation || 'no description' }}</pre>
+          </li>
+          <!-- <li class="list-group-item">
+                        <h5>Telecommunication</h5>
+
+                        <a href="#" editable-textarea="tripOverview.telecommunication" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.telecommunication || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <li class="list-group-item">
+            <h5>Hotel</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.hotel || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Shopping</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.shopping || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Dining</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.dining || 'no description' }}</pre>
+          </li>
+          <!-- <li class="list-group-item">
+                        <h5>Drinking Water</h5>
+
+                        <a href="#" editable-textarea="tripOverview.drinkingWater" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.drinkingWater || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <!-- <li class="list-group-item">
+                        <h5>Electricity</h5>
+
+                        <a href="#" editable-textarea="tripOverview.electricity" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.electricity || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <!-- <li class="list-group-item">
+                        <h5>Tips</h5>
+
+                        <a href="#" editable-textarea="tripOverview.tips" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10" e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.tips || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <!-- <li class="list-group-item">
+                        <h5>Public Areas</h5>
+
+                        <a href="#" editable-textarea="tripOverview.publicAreas" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.publicAreas || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <li class="list-group-item">
+            <h5>Culture</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.culture || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Religion</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.religion || 'no description' }}</pre>
+          </li>
+          <!-- <li class="list-group-item">
+                        <h5>Border Security</h5>
+
+                        <a href="#" editable-textarea="tripOverview.borderSecurity" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10"
+                            e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.borderSecurity || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <!-- <li class="list-group-item">
+                        <h5>Safety</h5>
+
+                        <a href="#" editable-textarea="tripOverview.safety" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10" e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.safety || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <li class="list-group-item">
+            <h5>Driving</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.driving || 'no description' }}</pre>
+          </li>
+          <!-- <li class="list-group-item">
+                        <h5>Locals</h5>
+
+                        <a href="#" editable-textarea="tripOverview.locals" onaftersave="updatePlan(tripOverview,destinationInfo)" e-rows="10" e-cols="100">
+                            <pre class="pre-tag-destination">{{ tripOverview.locals || 'no description' }}</pre>
+                        </a>
+                    </li> -->
+          <li class="list-group-item">
+            <h5>Useful Phone Numbers</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.usefulPhone || 'no description' }}</pre>
+          </li>
+          <li class="list-group-item">
+            <h5>Others</h5>
+
+            <pre class="pre-tag-destination">{{ tripOverview.others || 'no description' }}</pre>
+          </li>
+        </ul>
+        <h4>Our Suggestions</h4>
+
+        <pre class="pre-tag-destination">{{ tripOverview.suggestions || 'no description' }}</pre>
+
+
+
+
+        <hr>
+      </div>
+      <!-- <uib-accordion close-others="oneAtATime">
+
+            <div uib-accordion-group class="panel-default panelPlanView" heading="{{dateOpen.dateList | limitTo: 16}}" ng-model="dateOpenNow"
+                ng-repeat="dateOpen in processByDateList | orderBy: myDateSortFunction" is-open="false">
+
+
+                <uib-accordion close-others="oneAtATime">
+                    <div uib-accordion-group class="panel-default panelPlanDetailView" ng-model="attractionOpen" ng-repeat="attraction in dateOpen.content | orderBy: 'visitStart'"
+                        is-open="status.open">
+
+                        <uib-accordion-heading>
+                            {{attraction.visitStart | date : 'shortTime'}} - {{attraction.visitEnd | date : 'shortTime'}} | {{attraction.city}},{{attraction.state}}
+                            <a>
+                                <i class="pull-right glyphicon glyphicon-trash" ng-click="deletePlanEntry(attraction.entryID)"></i>
+                            </a>
+                            <a>
+                                <i style="margin-right:10px;" class="pull-right glyphicon glyphicon-pencil" ng-click="editPlanEntry('lg',attraction)"></i>
+                            </a>
+
+                            <p> </p>
+                            <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+
+                            <p style="text-align:left;"> {{attraction.attractionName}} </p>
+
+
+                        </uib-accordion-heading>
+
+                        <div class="btn-group" ng-show="ifAccomodation(attraction.category)" uib-dropdown auto-close="disabled" is-open="status.isopen">
+
+                            <a uib-dropdown-toggle ng-disabled="disabled" ng-click="getPlanHotelInfo(attraction.city,attraction.visitStart,attraction.visitEnd)">
+                                <i class="glyphicon glyphicon-bed"></i> Search Hotels</a>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label>City</label>
+                                            <input type="text" ng-model="inputPlanHotelCity" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label>Check In</label>
+
+                                            <input type="text" ng-model="inputPlanHotelCheckin" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label>Check Out</label>
+
+                                            <input type="text" ng-model="inputPlanHotelCheckout" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Room #</label>
+
+                                            <input type="number" ng-model="inputPlanHotelRoomNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0;-webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Guest #</label>
+
+                                            <input type="number" ng-model="inputPlanHotelGuestNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <br>
+                                            <button class="btn btn-link" ng-click="searchHotel(inputPlanHotelCity, inputPlanHotelCheckin, inputPlanHotelCheckout,inputPlanHotelRoomNum,inputPlanHotelGuestNum)">
+                                                <i class="glyphicon glyphicon-search"></i> Compare</button>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <br>
+
+                                            <button class="btn btn-link" ng-click="searchBooking(inputPlanHotelCity, inputPlanHotelCheckin, inputPlanHotelCheckout,inputPlanHotelRoomNum,inputPlanHotelGuestNum)">
+                                                <i class="glyphicon glyphicon-search"></i> Search Booking.com</button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </ul>
+                            <hr>
+
+
+                        </div>
+
+                        <div class="btn-group" ng-show="ifFoodDrinks(attraction.category)" uib-dropdown auto-close="disabled" is-open="status.isopen">
+                            <a uib-dropdown-toggle ng-disabled="disabled" ng-click="getRestaurantInfo(attraction.city,attraction.attractionName,attraction.visitStart)">
+                                <i class="glyphicon glyphicon-cutlery"></i> Search Restaurant</a>
+                            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <label>Name</label>
+                                            <input type="text" ng-model="inputPlanRestaurantName" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label>City</label>
+                                            <input type="text" ng-model="inputPlanRestaurantCity" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label>Reservation Date</label>
+
+                                            <input type="text" ng-model="inputPlanRestaurantCheckinDate" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <label>Reservation Time</label>
+
+                                            <input type="text" ng-model="inputPlanRestaurantCheckinTime" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label>Guest #</label>
+
+                                            <input type="number" ng-model="inputPlanRestaurantGuestNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                                        </div>
+
+
+                                        <div class="col-md-1">
+                                            <br>
+                                            <button class="btn btn-link" ng-click="searchRestaurant(inputPlanRestaurantCity, inputPlanRestaurantName, inputPlanRestaurantCheckinDate, inputPlanRestaurantCheckinTime,inputPlanRestaurantGuestNum)">
+                                                <i class="glyphicon glyphicon-search"></i> Search</button>
+
+                                        </div>
+
+                                    </div>
+                                    <p>{{opentableWarning}}</p>
+
+                                </div>
+
+                            </ul>
+                            <hr>
+
+                        </div>
+
+
+                        <div class="row">
+
+                            <div class="col-md-3">
+                                <label>Name</label> {{attraction.attractionName}}
+                            </div>
+                            <div class="col-md-3">
+                                <label>Category</label> {{attraction.category}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Address</label> {{attraction.address}}
+                            </div>
+                            <div class="col-md-2">
+                                <label>Phone</label> {{attraction.phone}}
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Hours</label> {{attraction.hours}}
+                            </div>
+                            <div class="col-md-3">
+                                <label>Ticket</label> {{attraction.ticketInfo}}
+                            </div>
+                            <div class="col-md-4">
+                                <label>Website</label>
+                                <a href="{{attraction.website}}">{{attraction.website}}</a>
+                            </div>
+                            <div class="col-md-2">
+                                <label>Reservation</label> {{attraction.reservationNeeded}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Parking</label> {{attraction.parkingInfo}}
+                            </div>
+                            <div class="col-md-3">
+                                <label>Public Transit</label> {{attraction.publicTransport}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>GPS</label> {{attraction.GPSCoordinates}}
+                            </div>
+                            <div class="col-md-2">
+                                <label>Time To Travel</label> {{attraction.timeToTravel}}
+                            </div>
+
+                        </div>
+                        <hr>
+                        <div class="row">
+
+                            <div class="col-md-9">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Description</label> {{attraction.description}}
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Notes</label> {{attraction.notes}}
+
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <label>Memo</label> {{attraction.planEntrymemo}}
+
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <label>Reservation Confirmation</label>
+                                        <a target="_blank" href="../assets/Uploads/reservation/{{attraction.reservationFileLocation}}">{{attraction.reservationFileLocation}}</a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img class="imageInAttractionBox" ng-src="{{attraction.picture1URL}}" alt="No image" onerror="this.onerror=null;this.src='../assets/noImage.png';"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <img class="imageInAttractionBox" ng-src="{{attraction.picture2URL}}" alt="No image" onerror="this.onerror=null;this.src='../assets/noImage.png';"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+                </uib-accordion>
+
+            </div>
+
+        </uib-accordion> -->
+
+
+      <div ng-hide="showDestinationInfo" style="overflow-y: scroll;">
+        <!-- {{selectedDayItem}} -->
+        <uib-accordion close-others="oneAtATime" style="overflow-y: scroll;">
+          <div uib-accordion-group class="panel-default panelPlanDetailView" ng-model="attractionOpen" ng-repeat="attraction in selectedDayItem.content | orderBy: 'visitStart'"
+            is-open="status.isOpen" style="overflow-y: scroll;">
+
+            <uib-accordion-heading>
+              {{attraction.visitStart | date : 'shortTime'}} - {{attraction.visitEnd | date : 'shortTime'}} | {{attraction.city}},{{attraction.state}}
+              <!-- <a>
+                            <i class="pull-right glyphicon glyphicon-trash" ng-click="deletePlanEntry(attraction.entryID)"></i>
+                        </a>
+                        <a>
+                            <i style="margin-right:10px;" class="pull-right glyphicon glyphicon-pencil" ng-click="editPlanEntry('lg',attraction)"></i>
+                        </a> -->
+
+              <p> </p>
+              <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+
+              <p style="text-align:left;"> {{attraction.attractionName}} </p>
+
+
+            </uib-accordion-heading>
+
+            <div class="btn-group" ng-show="ifAccomodation(attraction.category)" uib-dropdown auto-close="disabled" is-open="status.isopen">
+
+              <a uib-dropdown-toggle ng-disabled="disabled" ng-click="getPlanHotelInfo(attraction.city,attraction.visitStart,attraction.visitEnd)">
+                <i class="glyphicon glyphicon-bed"></i> Search Hotels</a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                <div class="" style="padding:10px;width:400px">
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <label>City</label>
+                      <input type="text" ng-model="inputPlanHotelCity" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Check In</label>
+
+                      <input type="text" ng-model="inputPlanHotelCheckin" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Check Out</label>
+
+                      <input type="text" ng-model="inputPlanHotelCheckout" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <label>Room #</label>
+
+                      <input type="number" ng-model="inputPlanHotelRoomNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0;-webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Guest #</label>
+
+                      <input type="number" ng-model="inputPlanHotelGuestNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <br>
+                      <button class="btn btn-link" ng-click="searchHotel(inputPlanHotelCity, inputPlanHotelCheckin, inputPlanHotelCheckout,inputPlanHotelRoomNum,inputPlanHotelGuestNum)">
+                        <i class="glyphicon glyphicon-search"></i> Compare</button>
+                    </div>
+                    <div class="col-md-6">
+                      <br>
+
+                      <button class="btn btn-link" ng-click="searchBooking(inputPlanHotelCity, inputPlanHotelCheckin, inputPlanHotelCheckout,inputPlanHotelRoomNum,inputPlanHotelGuestNum)">
+                        <i class="glyphicon glyphicon-search"></i> Search Booking.com</button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </ul>
+              <hr>
+
+
+            </div>
+
+            <div class="btn-group" ng-show="ifFoodDrinks(attraction.category)" uib-dropdown auto-close="disabled" is-open="status.isopen">
+              <a uib-dropdown-toggle ng-disabled="disabled" ng-click="getRestaurantInfo(attraction.city,attraction.attractionName,attraction.visitStart)">
+                <i class="glyphicon glyphicon-cutlery"></i> Search Restaurant</a>
+              <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+
+                <div class="" style="padding:10px;width:400px">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Name</label>
+                      <input type="text" ng-model="inputPlanRestaurantName" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                    <div class="col-md-6">
+                      <label>City</label>
+                      <input type="text" ng-model="inputPlanRestaurantCity" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                  </div>
+                  <div class="row">
+
+                    <div class="col-md-6">
+                      <label>Reservation Date</label>
+
+                      <input type="text" ng-model="inputPlanRestaurantCheckinDate" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                    <div class="col-md-6">
+                      <label>Reservation Time</label>
+
+                      <input type="text" ng-model="inputPlanRestaurantCheckinTime" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <label>Guest #</label>
+
+                      <input type="number" ng-model="inputPlanRestaurantGuestNum" class="form-control" style="border-top: 0;border-right: 0; border-left: 0; border-radius: 0; -webkit-box-shadow: none;box-shadow: none;">
+                    </div>
+
+
+                    <div class="col-md-6">
+                      <br>
+                      <button class="btn btn-link" ng-click="searchRestaurant(inputPlanRestaurantCity, inputPlanRestaurantName, inputPlanRestaurantCheckinDate, inputPlanRestaurantCheckinTime,inputPlanRestaurantGuestNum)">
+                        <i class="glyphicon glyphicon-search"></i> Search</button>
+
+                    </div>
+
+                  </div>
+                  <p>{{opentableWarning}}</p>
+
+                </div>
+
+              </ul>
+              <hr>
+
+            </div>
+
+
+            <div class="row" style="overflow-y: scroll;">
+
+              <div class="col-md-3">
+                <label>Name</label> {{attraction.attractionName}}
+              </div>
+              <div class="col-md-3">
+                <label>Category</label> {{attraction.category}}
+              </div>
+
+              <div class="col-md-4">
+                <label>Address</label> {{attraction.address}}
+              </div>
+              <div class="col-md-2">
+                <label>Phone</label> {{attraction.phone}}
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <label>Hours</label> {{attraction.hours}}
+              </div>
+              <div class="col-md-3">
+                <label>Ticket</label> {{attraction.ticketInfo}}
+              </div>
+              <div class="col-md-4">
+                <label>Website</label>
+                <a href="{{attraction.website}}">{{attraction.website}}</a>
+              </div>
+              <div class="col-md-2">
+                <label>Reservation</label> {{attraction.reservationNeeded}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3">
+                <label>Parking</label> {{attraction.parkingInfo}}
+              </div>
+              <div class="col-md-3">
+                <label>Public Transit</label> {{attraction.publicTransport}}
+              </div>
+
+              <div class="col-md-4">
+                <label>GPS</label> {{attraction.GPSCoordinates}}
+              </div>
+              <div class="col-md-2">
+                <label>Time To Travel</label> {{attraction.timeToTravel}}
+              </div>
+
+            </div>
+            <hr>
+            <div class="row">
+
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Description</label> {{attraction.description}}
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <label>Notes</label> {{attraction.notes}}
+
+                  </div>
+                </div>
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <label>Memo</label> {{attraction.planEntrymemo}}
+
+                  </div>
+                </div>
+
+                <div class="row">
+
+                  <div class="col-md-12">
+                    <label>Reservation Confirmation</label>
+                    <a target="_blank" href="../assets/Uploads/reservation/{{attraction.reservationFileLocation}}">{{attraction.reservationFileLocation}}</a>
+
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <img class="imageInAttractionBox" ng-src="{{attraction.picture1URL}}" alt="No image" onerror="this.onerror=null;this.src='../assets/noImage.png';"
+                />
+                <img class="imageInAttractionBox" ng-src="{{attraction.picture2URL}}" alt="No image" onerror="this.onerror=null;this.src='../assets/noImage.png';"
+                />
+              </div>
+            </div>
+
+
+
+
+          </div>
+
+
+
+
+        </uib-accordion>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+</div>
+
+
+</div>

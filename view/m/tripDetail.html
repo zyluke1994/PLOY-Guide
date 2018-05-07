@@ -1,0 +1,27 @@
+<FIELDSET>
+  <div class="container" ng-controller="tripDetailCtrl">
+
+    <div class="scrollable">
+      <div style="padding:8px; text-align:center; background-color:whitesmoke">
+        <h4>{{tripName}} - {{tripDayCount}} Days</h4>
+      </div>
+
+      <div class="scrollable-content" style=" padding-bottom: 50px;">
+        <div class="list-group" ui-turn-off='uiSidebarLeft'>
+          <a ng-repeat="(key, data) in groupedByDate"  ng-click="loadDay(planID,key)" style=" background-size: 420px;background-repeat: no-repeat; background-position-y:30%; margin: 15px; height:125px; background-color:whitesmoke" id="tripAttractionListItem" ng-style="{'background-image': 'url(' + data[0].picture1URL + ')'}" class="list-group-item ng-binding ng-scope ">
+        
+        <!--<div class="myTripsTitleBar" style=" "bottom>-->
+            <span>
+              <p class="pull-left" style="color:whitesmoke; font-size:1.5em;" >{{data[0].visitStart | date:'EEEE yyyy-MM-dd'}}</p>
+        <p class="pull-right" style="color:whitesmoke; font-size:2.3em;" >Day {{key}}    
+</p>
+            </span>
+
+        <!--</div>-->
+        
+        
+      </a>
+        </div>
+      </div>
+    </div>
+  </div>

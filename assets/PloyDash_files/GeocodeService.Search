@@ -1,0 +1,551 @@
+/**/_xdc_._fcx3qa && _xdc_._fcx3qa( {
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "155",
+               "short_name" : "155",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Bay Street",
+               "short_name" : "Bay St",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Downtown Jersey City",
+               "short_name" : "Downtown Jersey City",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "07302",
+               "short_name" : "07302",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "155 Bay St, Jersey City, NJ 07302, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 40.72056,
+               "lng" : -74.0400252
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7219089802915,
+                  "lng" : -74.03867621970851
+               },
+               "southwest" : {
+                  "lat" : 40.7192110197085,
+                  "lng" : -74.04137418029151
+               }
+            }
+         },
+         "place_id" : "ChIJexI1o61QwokRvLVKB2t0rq4",
+         "types" : [ "street_address" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Powerhouse Arts District",
+               "short_name" : "Powerhouse Arts District",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "07302",
+               "short_name" : "07302",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Powerhouse Arts District, Jersey City, NJ 07302, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.7222021,
+                  "lng" : -74.036484
+               },
+               "southwest" : {
+                  "lat" : 40.7188019,
+                  "lng" : -74.0411848
+               }
+            },
+            "location" : {
+               "lat" : 40.720487,
+               "lng" : -74.03955959999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7222021,
+                  "lng" : -74.036484
+               },
+               "southwest" : {
+                  "lat" : 40.7188019,
+                  "lng" : -74.0411848
+               }
+            }
+         },
+         "place_id" : "ChIJB3stra1QwokR9BuHWzkB6Wg",
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Downtown Jersey City",
+               "short_name" : "Downtown Jersey City",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "07302",
+               "short_name" : "07302",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Downtown Jersey City, Jersey City, NJ 07302, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.7286898,
+                  "lng" : -74.03403279999999
+               },
+               "southwest" : {
+                  "lat" : 40.712427,
+                  "lng" : -74.05149949999999
+               }
+            },
+            "location" : {
+               "lat" : 40.7203882,
+               "lng" : -74.04323149999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7286898,
+                  "lng" : -74.03403279999999
+               },
+               "southwest" : {
+                  "lat" : 40.712427,
+                  "lng" : -74.05149949999999
+               }
+            }
+         },
+         "place_id" : "ChIJ_5Q_bLJQwokRy7o0TOvDEWk",
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "The Waterfront",
+               "short_name" : "The Waterfront",
+               "types" : [ "neighborhood", "political" ]
+            },
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "The Waterfront, Jersey City, NJ, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.7369011,
+                  "lng" : -74.02688379999999
+               },
+               "southwest" : {
+                  "lat" : 40.7110019,
+                  "lng" : -74.05118499999999
+               }
+            },
+            "location" : {
+               "lat" : 40.7220293,
+               "lng" : -74.03735639999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7369011,
+                  "lng" : -74.02688379999999
+               },
+               "southwest" : {
+                  "lat" : 40.7110019,
+                  "lng" : -74.05118499999999
+               }
+            }
+         },
+         "place_id" : "ChIJBxj81lJXwokRHGpyVzqOAZo",
+         "types" : [ "neighborhood", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Jersey City, NJ, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.768867,
+                  "lng" : -74.020405
+               },
+               "southwest" : {
+                  "lat" : 40.661622,
+                  "lng" : -74.11705689999999
+               }
+            },
+            "location" : {
+               "lat" : 40.72815749999999,
+               "lng" : -74.0776417
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.768867,
+                  "lng" : -74.020405
+               },
+               "southwest" : {
+                  "lat" : 40.661622,
+                  "lng" : -74.11705689999999
+               }
+            }
+         },
+         "place_id" : "ChIJ3a-_JdJQwokR2SXNohPwSQI",
+         "types" : [ "locality", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "07302",
+               "short_name" : "07302",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Jersey City",
+               "short_name" : "Jersey City",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Jersey City, NJ 07302, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.7311249,
+                  "lng" : -74.02251099999999
+               },
+               "southwest" : {
+                  "lat" : 40.7094359,
+                  "lng" : -74.06589989999999
+               }
+            },
+            "location" : {
+               "lat" : 40.7218318,
+               "lng" : -74.0447003
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.7311249,
+                  "lng" : -74.02251099999999
+               },
+               "southwest" : {
+                  "lat" : 40.7094359,
+                  "lng" : -74.06589989999999
+               }
+            }
+         },
+         "place_id" : "ChIJSX8N2bNQwokRlbmEITwHbjU",
+         "types" : [ "postal_code" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "Hudson County",
+               "short_name" : "Hudson County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "Hudson County, NJ, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 40.8235689,
+                  "lng" : -73.9848829
+               },
+               "southwest" : {
+                  "lat" : 40.6421489,
+                  "lng" : -74.16608699999999
+               }
+            },
+            "location" : {
+               "lat" : 40.7453199,
+               "lng" : -74.05351259999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 40.8235689,
+                  "lng" : -73.9848829
+               },
+               "southwest" : {
+                  "lat" : 40.6421489,
+                  "lng" : -74.16608699999999
+               }
+            }
+         },
+         "place_id" : "ChIJ0UrHnkGrw4kRhaap0swA39s",
+         "types" : [ "administrative_area_level_2", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "New Jersey",
+               "short_name" : "NJ",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "New Jersey, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 41.357423,
+                  "lng" : -73.88506
+               },
+               "southwest" : {
+                  "lat" : 38.788657,
+                  "lng" : -75.56358609999999
+               }
+            },
+            "location" : {
+               "lat" : 40.0583238,
+               "lng" : -74.4056612
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 41.357423,
+                  "lng" : -73.88506
+               },
+               "southwest" : {
+                  "lat" : 38.788657,
+                  "lng" : -75.56358609999999
+               }
+            }
+         },
+         "place_id" : "ChIJn0AAnpX7wIkRjW0_-Ad70iw",
+         "types" : [ "administrative_area_level_1", "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "New York-Northern New Jersey-Long Island, NY-NJ-PA",
+               "short_name" : "New York-Northern New Jersey-Long Island, NY-NJ-PA",
+               "types" : [ "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "New York-Northern New Jersey-Long Island, NY-NJ-PA, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 41.6018065,
+                  "lng" : -71.85621399999999
+               },
+               "southwest" : {
+                  "lat" : 39.49853299999999,
+                  "lng" : -75.3585939
+               }
+            },
+            "location" : {
+               "lat" : 40.9590293,
+               "lng" : -74.0300122
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 41.6018065,
+                  "lng" : -71.85621399999999
+               },
+               "southwest" : {
+                  "lat" : 39.49853299999999,
+                  "lng" : -75.3585939
+               }
+            }
+         },
+         "place_id" : "ChIJ3YJV4PRWwokRFFI21ZrHXtQ",
+         "types" : [ "political" ]
+      },
+      {
+         "address_components" : [
+            {
+               "long_name" : "New York Metropolitan Area",
+               "short_name" : "New York Metropolitan Area",
+               "types" : [ "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "New York Metropolitan Area, USA",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 42.0809059,
+                  "lng" : -71.777491
+               },
+               "southwest" : {
+                  "lat" : 39.475198,
+                  "lng" : -75.3587649
+               }
+            },
+            "location" : {
+               "lat" : 40.7127761,
+               "lng" : -74.00595439999999
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 42.0809059,
+                  "lng" : -71.777491
+               },
+               "southwest" : {
+                  "lat" : 39.475198,
+                  "lng" : -75.3587649
+               }
+            }
+         },
+         "place_id" : "ChIJ-5Z24NaGwokRiMh4Rj8FNMo",
+         "types" : [ "political" ]
+      }
+   ],
+   "status" : "OK"
+}
+ )

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://localhost:8888/#!/dayDetail?planID=109&d=4 -->
+<html lang="en" ng-app="ploydash" class="ng-scope  has-sidebar-left has-sidebar-right has-navbar-top   overthrow-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PloyDash</title>
+    <script style="">
+        document.write('<base href="' + document.location + '" />');
+    </script><!--<base href="http://localhost:8888/#!/dayDetail?planID=109&amp;d=4">--><base href=".">
+    <!-- Bootstrap Core CSS -->
+    <link href="./PloyDash_files/bootstrap.css" rel="stylesheet">
+    <link href="./PloyDash_files/flaticon.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./PloyDash_files/font-awesome.css">
+    <!--<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">-->
+    <!--<link rel="stylesheet" href="bower_components/angular-advanced-searchbox/dist/angular-advanced-searchbox.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker-1.1.4/src/css/datetimepicker.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-grid/ui-grid.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-duration-picker/dist/bootstrap-duration-picker.css" />
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css" />
+        <link rel="stylesheet" href="bower_components/image-picker-master/image-picker/image-picker.css" />-->
+
+ <!-- Only required for desktop -->
+    <link rel="stylesheet" href="./PloyDash_files/mobile-angular-ui-hover.min.css">
+
+    <!-- Always required -->
+    <link rel="stylesheet" href="./PloyDash_files/mobile-angular-ui-base.min.css">
+
+    <!-- Only required for desktop -->
+    <link rel="stylesheet" href="./PloyDash_files/mobile-angular-ui-desktop.min.css">
+
+    <link href="./PloyDash_files/css" rel="stylesheet">
+
+    <!--<link href="bower_components/pure-angular-advanced-searchbox/dist/styles/main.css" rel="stylesheet">-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="./PloyDash_files/styles.css">
+
+    <style>
+
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script type="text/javascript" charset="UTF-8" src="./PloyDash_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/geocoder.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/infowindow.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/stats.js"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/AuthenticationService.Authenticate"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/GeocodeService.Search"></script><script type="text/javascript" charset="UTF-8" src="./PloyDash_files/GeocodeService.Search"></script></head>
+
+<body>
+    <!-- Sidebars -->
+
+    <div ng-controller="sideBarCtrl" class="sidebar sidebar-left ng-scope">
+  <div class="scrollable" style="padding-top: 0px;">
+    <h1 class="scrollable-header app-name ng-binding">
+        Hi zyluke1994</h1>  
+    <div class="scrollable-content overthrow">
+      <div class="list-group" ui-turn-off="uiSidebarLeft">
+        <a class="list-group-item" href="http://localhost:8888/#/link1">My Trips 
+          <i class="fa fa-chevron-right pull-right"></i></a>
+        <a class="list-group-item" href="http://localhost:8888/view/test.html">Link 2
+          <i class="fa fa-chevron-right pull-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="sidebar sidebar-right"><!-- ... --></div>
+
+    <div class="app">
+     <div class="navbar navbar-app navbar-absolute-top">
+        <div class="navbar-brand navbar-brand-center" ui-yield-to="title">
+                <img style="height:20px; margin:auto;" src="./PloyDash_files/ploy_white.png" class="ng-scope">
+        </div>
+        <div class="btn-group pull-left">
+          <div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">
+            <i class="fa fa-bars" style="font-size:1.5em"></i>
+          </div>
+        </div>
+        <div class="btn-group pull-right" ui-yield-to="navbarAction">
+          <div ui-toggle="uiSidebarRight" class="btn sidebar-right-toggle ng-scope">
+            <i class="fa fa-compass" style="font-size:1.5em"></i> 
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="navbar navbar-app navbar-absolute-bottom">
+        <div class="btn-group justified">
+          <a href="/docs" class="btn btn-navbar"><i class="fa fa-home fa-navbar"></i> Docs</a>
+          <a href="https://github.com/mcasimir/mobile-angular-ui" class="btn btn-navbar"><i class="fa fa-github fa-navbar"></i> Sources</a>
+          <a href="https://github.com/mcasimir/mobile-angular-ui/issues" class="btn btn-navbar"><i class="fa fa-exclamation-circle fa-navbar"></i> Issues</a>
+        </div>
+      </div>-->
+      <!-- App body -->
+
+      <div class="app-body">
+        <div class="app-content">
+          <!-- ngView: --><ng-view class="ng-scope"><fieldset class="ng-scope">
+
+    <div class="container ng-scope" ng-controller="dayDetailCtrl">
+
+
+        <div class="scrollable" style="padding-top: 234px;">
+            <div class="scrollable-header">
+
+                <!-- <div style="padding:8px; text-align:center; background-color:whitesmoke">
+                    <h4>Day {{daySelected}} - {{dateSelected | date:'EEEE yyyy-MM-dd'}}</h4>
+                </div> -->
+                <div class="locationBox">
+                    <div ng-show="showMap" class="ng-hide">
+                        <iframe width="100%" height="200" frameborder="0" style="border:0" allowfullscreen="" ng-src="https://www.google.com/maps/embed/v1/place?key=AIzaSyABaFjpIWuL4L4rXludE80sgRF19OeM7r0&amp;q=40.7206595,-74.040409" src="./PloyDash_files/place.html">
+                        </iframe>
+                    </div>
+                    <div ng-show="showNearby" class="ng-hide">
+                        <iframe width="100%" height="200" frameborder="0" style="border:0" allowfullscreen="" ng-src="https://www.google.com/maps/embed/v1/search?key=AIzaSyABaFjpIWuL4L4rXludE80sgRF19OeM7r0&amp;q=food+near+me" src="./PloyDash_files/search.html">
+                        </iframe>
+                    </div>
+
+                    <div id="locDisplayBox" ng-show="showLocation" style="height: 200px; color: white; background-size: 600px; background-position-y: 30%; background-repeat: no-repeat; background-image: url(&quot;./assets/banner3.jpg&quot;);" ng-style="{&#39;background-image&#39;: &#39;url(&#39; +backgroundPicToDisplay + &#39;)&#39;}">
+                        <br>
+                        <h4 style="text-align:center" id="location">You are near/at:</h4>
+                        <h3 style="text-align:center; padding-top: 5px; padding-bottom:5px;background-color:rgba(114, 114, 114,0.4)" class="ng-binding">155 Bay St </h3>
+                        <h4 style="text-align:center" id="location" class="ng-binding">Jersey City, NJ 07302, USA</h4>
+                        <h5 style="text-align:center" id="location" class="ng-binding">6.3 KM away from Times Square</h5>
+                    </div>
+
+                </div>
+                <div class="btn-group justified" style="background-color:rgba(242, 242, 242,0.7)">
+                    <a style="color:#605885" ng-click="switchMapView()" class="btn btn-navbar"><i style="color:#605885" class="fa fa-map-o fa-navbar"></i> Map</a>
+                    <a style="color:#605885" ng-click="switchNearbyView()" class="btn btn-navbar"><i style="color:#605885" class="fa fa-map-signs fa-navbar"></i> Nearby</a>
+                    <a style="color:#605885" ng-click="showInfo(&#39;toCheck&#39;)" class="btn btn-navbar"><i style="color:#605885" class="fa fa-info-circle fa-navbar"></i> Information</a>
+                </div>
+            </div>
+            <div class="scrollable-content overthrow ng-hide" ng-show="showInfoPage" style="background-color:#605885; color:white; padding-bottom: 50px;">
+                <br>
+                <h5 style="text-align:right; margin-right:20px;" class="ng-binding">About  <i style="color:white; margin-left:10px;" ng-click="closeShowInfo()" class="fa fa-times fa-navbar"></i></h5>
+
+
+                <hr>
+                <div style="margin:10px;">
+                    <p class="ng-binding">
+                        
+                    </p>
+                    <p class="ng-binding">
+                        
+                    </p>
+                    <p class="ng-binding">
+                        
+                    </p>
+                    <p class="ng-binding">
+                        
+                    </p>
+                    <p class="ng-binding">
+                        
+                    </p>
+
+                    <img style="max-height:200px;" class="img-fluid" alt="Responsive image">
+                    <img style="max-height:200px;" class="img-fluid" alt="Responsive image">
+
+
+                    <!-- <div class="carousel ng-scope ng-isolate-scope">
+                        <div class="carousel-inner">
+                            <div class="carousel-item ng-isolate-scope ui-drag-move dismiss" ng-style="{'background-image': 'url(' + attractionForInfo.picture1URL + ')'}; z-index: 1999;">
+                                <div class="item">
+                                    <div ng-transclude="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+
+            </div>
+            <div class="scrollable-content overthrow" ng-show="showAttractionList" style="background-color:#605885; color:white;padding-bottom: 50px;">
+                <br>
+                <p style="text-align:center;" class="ng-binding">Day 4 - Wednesday 2017-08-09</p>
+                <div class="list-group" ui-turn-off="uiSidebarLeft" ng-show="showPastStopsPage">
+                    <!-- ngRepeat: item in listForDaySelectedPast --><a ng-repeat="item in listForDaySelectedPast" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: grey; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">06:00 PM - 07:25 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Flatiron Building               
+                    </span>
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelectedPast -->
+                </div>
+                <h5 style="text-align:center;"> Upcoming Stops <i style="color:white" ng-click="showPastStops()" class="fa fa-history fa-navbar"></i> </h5>
+                <div class="list-group" ui-turn-off="uiSidebarLeft">
+
+                    <!-- ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">07:30 PM - 07:55 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Times Square               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">08:05 PM - 08:30 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Statue Of Liberty               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">08:35 PM - 08:55 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Pennsylvania Station (New York City)               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">09:00 PM - 09:50 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">John F. Kennedy International Airport               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">10:00 PM - 10:30 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Hilton Garden Inn New York/West 35th Street               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">10:35 PM - 11:00 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">Columbus Circle               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected --><a ng-repeat="item in listForDaySelected" ng-click="" style="margin: 2px; height: 65px; background-color: rgb(96, 88, 133); color: white; border-bottom: 0px; background-image: url(&quot;&quot;);" id="tripAttractionListItem" ng-style="{&#39;background-image&#39;: &#39;url(&#39; + data[0].picture1URL + &#39;)&#39;}" class="list-group-item ng-binding ng-scope">
+                                <span style="margin-right:20px;" class="ng-binding">11:10 PM - 11:55 PM
+                                    <i style="color:white" ng-click="showInfo(item)" class="fa fa-info-circle fa-navbar"></i>      
+                                </span>
+
+                    <span class="ng-binding">O'Hare International Airport               
+                    </span>
+                                     <div class="row">  
+                                         <div class="col-xs-4">
+                                                                                      <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-location-arrow" aria-hidden="true"></i> Navigate Me</div>
+
+                                         </div>             
+                                                                                                                                                                         <div class="col-xs-2">
+                                                                                                                                                                         </div>  
+                                                                                   
+
+                                                                                     <div class="col-xs-3">
+                                      
+                                            <div style="text-align:right; color:#ff941e;" ng-click="navigateTo(item)"> <i class="fa fa-flag-checkered " aria-hidden="true"></i> Begin </div>
+                                                                                          </div>
+                                                                                          <div class="col-xs-3">
+                                                                                                                                          <!-- <div style="text-align:right; color:#ff941e;"  ui-turn-on="modalConfirmEnd"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> -->
+
+                                             <div style="text-align:right; color:#ff941e;" ng-click="updatePlan(item,&#39;updateVisitEndActual&#39;)"> <i class="fa fa-check-square-o" aria-hidden="true"></i> End  </div> 
+                                                                                          </div>
+                                        </div>
+        
+      </a><!-- end ngRepeat: item in listForDaySelected -->
+                </div>
+            </div>
+        </div>
+    </div>
+    </fieldset></ng-view>
+        </div>
+      </div>
+    </div><!-- ~ .app -->
+
+    <!-- Modals and Overlays -->
+    <div ui-yield-to="modals"></div>
+
+
+<!-- jQuery Version 1.11.1 -->
+
+<script src="./PloyDash_files/angular.js"></script>
+<script src="./PloyDash_files/angular-route.js"></script>
+<script src="./PloyDash_files/angular-cookies.js"></script>
+<script src="./PloyDash_files/angular-animate.min.js"></script>
+<script src="./PloyDash_files/angular-aria.min.js"></script>
+
+<!--<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>-->
+<script src="./PloyDash_files/ui-bootstrap-tpls.js"></script>
+<!-- Angular Material Javascript now available via Google CDN; version 0.9.4 used here -->
+<!--<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>-->
+<script src="./PloyDash_files/jquery.js"></script>
+<script src="./PloyDash_files/script.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="./PloyDash_files/bootstrap.js"></script>
+
+<script src="./PloyDash_files/lodash.js"></script>
+<script src="./PloyDash_files/ui.core.js"></script>
+<script src="./PloyDash_files/angular-advanced-searchbox-tpls.min.js"></script>
+<script src="./PloyDash_files/moment.js"></script>
+<script src="./PloyDash_files/datetimepicker.js"></script>
+<script src="./PloyDash_files/datetimepicker.templates.js"></script>
+<script src="./PloyDash_files/dd-text-collapse.js"></script>
+<script src="./PloyDash_files/angular-pageslide-directive.min.js"></script>
+
+<script type="text/javascript" src="./PloyDash_files/fullcalendar.min.js"></script>
+<script type="text/javascript" src="./PloyDash_files/gcal.js"></script>
+<script type="text/javascript" src="./PloyDash_files/calendar.js"></script>
+
+<script src="./PloyDash_files/ui-grid.min.js"></script>
+<script src="./PloyDash_files/custom-input.js"></script>
+<script src="./PloyDash_files/datetime.js"></script>
+<script src="./PloyDash_files/underscore.js"></script>
+<script src="./PloyDash_files/image-picker.min.js"></script>
+<!--<script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>-->
+    <script src="./PloyDash_files/mobile-angular-ui.min.js"></script>
+<script src="./PloyDash_files/inputAttractionCtrl.js"></script>
+<script src="./PloyDash_files/dayDetailCtrl.js"></script>
+<script src="./PloyDash_files/tripDetailCtrl.js"></script>
+<script src="./PloyDash_files/viewAttractionCtrl.js"></script>
+<script src="./PloyDash_files/loginCtrl.js"></script>
+<script src="./PloyDash_files/myTripsCtrl.js"></script>
+<script src="./PloyDash_files/viewAttractionModalCtrl.js"></script>
+<script src="./PloyDash_files/addToPlanModalCtrl.js"></script>
+<script src="./PloyDash_files/editPlanModalCtrl.js"></script>
+<script src="./PloyDash_files/viewPlanCtrl.js"></script>
+<script src="./PloyDash_files/viewPlanCalendarCtrl.js"></script>
+ <script src="./PloyDash_files/js" async="" defer=""></script>
+  <script src="./PloyDash_files/js(1)"></script> 
+ 
+
+    <script src="./PloyDash_files/angularjs-google-maps.js"></script>
+  
+
+
+
+
+
+</body></html>

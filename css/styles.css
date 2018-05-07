@@ -1,0 +1,119 @@
+
+/*
+Primary #605885
+Scondary #948DB3
+Scent #FFFFFF
+Orange: ff941e
+
+*/
+
+
+body{
+font-family: 'Assistant', sans-serif;
+        font-weight: 400;
+         
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+          min-height: 100%;
+          background-color: white;
+
+}
+.app-content{
+            background-color: white;
+
+}
+.app{
+            background: white;
+
+}
+#myTripsListItem{
+ 
+    background-image: url("../assets/banner2.jpg");
+    background-size: 450px;
+        background-repeat: no-repeat;
+
+}
+
+.tripDetailTitle{
+  background:#ff941e;
+  color:white;
+      border-radius: 5px;
+      padding-left: 20px;
+              padding-right: 20px;
+                              padding-top: 10px;
+                             
+
+}
+.attractionDisplayBox{
+  border: 1px solid lightgray;
+  padding-top:10px; 
+}
+.imageInAttractionBox{
+  max-width: 200px;
+  max-height: 200px;
+}
+.list-group-item-plan {
+  padding-top: 15px;
+  padding-bottom:15px;
+  border-style: none;
+  margin-bottom:1px;
+  border-bottom: 0.5px solid rgba(211, 211, 211, 0.466);
+  border-radius: 0px;
+  background-color:#fff; 
+ 
+
+}
+.list-group-item-plan.active, .list-group-item-plan.active:hover, .list-group-item-plan.active:focus {
+  z-index: 2;
+  color: gray;
+  background-color: white;
+  border-left: 3.5px solid #ff941e;
+  box-shadow: 0px 0px white;
+  border-bottom: 0.5px solid rgba(211, 211, 211, 0.466);
+}
+.list-group-item-plan:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+
+}
+.list-group-item-plan:focus {
+  color: #fff;
+  background-color: transparent;
+  border-color: dimgray;
+  box-shadow: none;
+}
+#tripAttractionListItem{
+    background-size: 450px;
+        background-repeat: no-repeat;
+}
+.list-group-item{
+   background-size: 450px;
+        background-repeat: no-repeat;
+}
+.myTripsTitleBar{
+  height:50px; 
+  background-color:rgba(255, 148, 30, 0.55); 
+  color:white;
+  margin:-15px;
+  margin-top: 65px;
+  padding: 10px;
+
+}
+.fa{
+  color:white;
+}
+.navbar{
+  background-color:#605885;
+}
+.locationBox{
+  height: 200px;
+  background-color:rgba(0, 0, 0, 0.55); 
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 100px;
+  font-style: normal;
+  margin-left: 0px;
+}

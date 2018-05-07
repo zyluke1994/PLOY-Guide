@@ -1,0 +1,63 @@
+
+/*
+Primary #605885
+Scondary #948DB3
+Scent #FFFFFF
+Orange: ff941e
+
+*/
+
+
+body{
+font-family: 'Assistant', sans-serif;
+        font-weight: 400;
+         
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+          min-height: 100%;
+          background-color: white;
+
+}
+.app-content{
+            background-color: white;
+
+}
+.app{
+            background: white;
+
+}
+#myTripsListItem{
+ 
+    background-image: url("../assets/banner2.jpg");
+    background-size: 450px;
+        background-repeat: no-repeat;
+
+
+
+}
+#tripAttractionListItem{
+    background-size: 450px;
+        background-repeat: no-repeat;
+}
+.list-group-item{
+   background-size: 450px;
+        background-repeat: no-repeat;
+}
+.myTripsTitleBar{
+  height:50px; 
+  background-color:rgba(255, 148, 30, 0.55); 
+  color:white;
+  margin:-15px;
+  margin-top: 65px;
+  padding: 10px;
+
+}
+.fa{
+  color:white;
+}
+.navbar{
+  background-color:#605885;
+}
+.locationBox{
+  height: 200px;
+  background-color:rgba(0, 0, 0, 0.55); 
+}
